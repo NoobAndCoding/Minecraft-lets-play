@@ -48,3 +48,32 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('scrollContainer');
+    const items = container.getElementsByClassName('scroll-item');
+    let activeIndex = 0;
+
+    function updateItems() {
+        for (let i = 0; i < items.length; i++) {
+            if (i === activeIndex) {
+                items[i].classList.add('active');
+                items[i].classList.remove('inactive');
+            } else {
+                items[i].classList.add('inactive');
+                items[i].classList.remove('active');
+            }
+        }
+    }
+
+    container.addEventListener('wheel', function (event) {
+        if (event.deltaY > 0) {
+            activeIndex = (activeIndex + 1) % items.length;
+        } else {
+            activeIndex = (activeIndex - 1 + items.length) % items.length;
+        }
+        updateItems();
+    });
+
+    updateItems();
+});
+

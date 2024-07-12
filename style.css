@@ -1,21 +1,35 @@
 .scroll-container {
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    border: 2px solid #ccc;
-    padding: 10px;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .scroll-item {
   display: inline-block;
-  width: 200px;
-  height: 150px;
+  width: 300px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
   margin-right: 10px;
   background-color: #f0f0f0;
   border: 1px solid #999;
   text-align: center;
-  line-height: 150px; /* Center text vertically */
-  font-size: 20px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.scroll-item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.scroll-item.active {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.scroll-item.inactive {
+  opacity: 0.5;
 }
 
 .navbar {
