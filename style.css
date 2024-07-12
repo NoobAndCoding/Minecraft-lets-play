@@ -1,3 +1,4 @@
+
 .scroll-container {
   width: 100%;
   overflow-x: auto;
@@ -31,7 +32,6 @@
 .scroll-item.inactive {
   opacity: 0.5;
 }
-
 .navbar {
     overflow: hidden;
     background-color: #595959;

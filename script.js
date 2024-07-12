@@ -66,12 +66,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     container.addEventListener('wheel', function (event) {
+        event.preventDefault();
         if (event.deltaY > 0) {
             activeIndex = (activeIndex + 1) % items.length;
         } else {
             activeIndex = (activeIndex - 1 + items.length) % items.length;
         }
         updateItems();
+        // Scroll the container
+        const scrollAmount = items[activeIndex].offsetLeft - container.scrollLeft - (container.clientWidth / 2) + (items[activeIndex].clientWidth / 2);
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
 
     updateItems();
