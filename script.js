@@ -6,6 +6,6 @@ function myFunction() {
         } else {
         element.style.opacity = '0';
         }
-    });
+    })
 }
 
