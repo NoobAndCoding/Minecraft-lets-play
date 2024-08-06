@@ -1,43 +1,48 @@
 /* styles.css */
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-}
-
-.sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  padding-top: 20px;
-  overflow-x: hidden;
-  transition: 0.3s;
-}
-
-/* styles.css */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.topbar {
+  height: 60px;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.topbar h1 {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.togglebtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
 .sidebar {
   height: 100%;
   width: 250px;
   position: fixed;
-  top: 0;
+  top: 60px; /* Adjusted for topbar */
   left: 0;
   background-color: #111;
   padding-top: 20px;
   overflow-x: hidden;
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar.hidden {
+  width: 0;
+  padding: 0;
 }
 
 .sidebar a {
@@ -46,7 +51,7 @@ body {
   font-size: 18px;
   color: white;
   display: block;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
 .sidebar a:hover {
@@ -63,6 +68,11 @@ body {
 }
 
 .content {
-  margin-left: 260px;
+  margin-left: 260px; /* Adjusted for sidebar */
   padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar.hidden + .content {
+  margin-left: 10px; /* Minimal margin when sidebar is hidden */
 }
