@@ -8,30 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="topbar">
-        <button class="togglebtn" onclick="toggleSidebar()">☰</button>
-        <h1>My Website</h1>
-    </div>
-    <div class="sidebar" id="mySidebar">
-        <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
-        <a href="#services"><i class="fas fa-concierge-bell"></i> Services</a>
-        <a href="#clients"><i class="fas fa-users"></i> Clients</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-    </div>
-    <div class="content">
-        <h2>Content Area</h2>
-        <p>This is where your main content goes.</p>
-    </div>
-    <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("mySidebar");
-            if (sidebar.classList.contains('hidden')) {
-                sidebar.classList.remove('hidden');
-            } else {
-                sidebar.classList.add('hidden');
-            }
-        }
-    </script>
+    <header> 
+        <div class = "sidebar" id = "sidebar">
+            <div class = "sidebar.content" id = "sidebar.content">
+                <h1> Fae Skata</h1>
+            </div>
+        </div>
+        <button onclick="myFunction()">Skata me meli kai kanela</button>
+    </header>
 </body>
 </html>
 
